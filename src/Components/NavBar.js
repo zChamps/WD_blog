@@ -36,30 +36,30 @@ const NavBar = () => {
 
       <ul className={`${styles.links_list} ${menuOpen ? styles.show : ""}`}>
         <li>
-          <NavLink to={"/"} className={({ isActive }) => (isActive ? styles.active : "")}>Home</NavLink>
+          <NavLink to={"/"} onClick={handleMenuClick} className={({ isActive }) => (isActive ? styles.active : "")}>Home</NavLink>
         </li>
         {!user && (
           <>
             <li>
-              <NavLink to={"/login"} className={({ isActive }) => (isActive ? styles.active : "")}>Login</NavLink>
+              <NavLink to={"/login"} onClick={handleMenuClick} className={({ isActive }) => (isActive ? styles.active : "")}>Login</NavLink>
             </li>
             <li>
-              <NavLink to={"/register"} className={({ isActive }) => (isActive ? styles.active : "")}>Cadastrar</NavLink>
+              <NavLink to={"/register"} onClick={handleMenuClick} className={({ isActive }) => (isActive ? styles.active : "")}>Cadastrar</NavLink>
             </li>
           </>
         )}
         {user && (
           <>
             <li>
-              <NavLink to={"/posts/create"} className={({ isActive }) => (isActive ? styles.active : "")}>Novo Post</NavLink>
+              <NavLink to={"/posts/create"} onClick={handleMenuClick} className={({ isActive }) => (isActive ? styles.active : "")}>Novo Post</NavLink>
             </li>
             <li>
-              <NavLink to={"/dashboard"} className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
+              <NavLink to={"/dashboard"} onClick={handleMenuClick} className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
             </li>
           </>
         )}
         <li>
-          <NavLink to={"/about"} className={({ isActive }) => (isActive ? styles.active : "")}>About</NavLink>
+          <NavLink to={"/about"} onClick={handleMenuClick} className={({ isActive }) => (isActive ? styles.active : "")}>About</NavLink>
         </li>
         {user && (
           <li>
